@@ -41,7 +41,7 @@ export const OAAnalyzer: React.FC = () => {
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleInputChange = (field: keyof PatientInfo, value: string) => {
-    setPatient((prev) => ({ ...prev, [field]: value }));
+    setPatient((prev: PatientInfo) => ({ ...prev, [field]: value }));
   };
 
   const handleFileChange = (file: File | null) => {
@@ -444,7 +444,7 @@ export const OAAnalyzer: React.FC = () => {
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 font-medium">
-                      {DEFAULT_OA_RESULT.cartilageVolumes.map((item, idx) => (
+                      {DEFAULT_OA_RESULT.cartilageVolumes.map((item: any, idx: number) => (
                         <tr key={idx} className="hover:bg-blue-50/30 transition-colors">
                           <td className="px-4 py-3 text-slate-800 font-semibold">{item.structure}</td>
                           <td className="px-4 py-3 text-right text-slate-900 font-mono font-bold text-sm">

@@ -196,7 +196,7 @@ export const ImplantRecommendation: React.FC = () => {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-100 font-medium">
-                  {IMPLANT_DATA.alternatives.map((opt, idx) => (
+                  {IMPLANT_DATA.alternatives.map((opt: any, idx: number) => (
                     <tr
                       key={idx}
                       className={`transition-colors ${
@@ -233,7 +233,7 @@ export const ImplantRecommendation: React.FC = () => {
                 <Zap className="w-3.5 h-3.5 text-blue-600" /> Total Matching Error Margin Comparison
               </h4>
               <div className="space-y-2">
-                {IMPLANT_DATA.alternatives.map((opt, idx) => {
+                {IMPLANT_DATA.alternatives.map((opt: any, idx: number) => {
                   const numericError = parseFloat(opt.totalError);
                   const barPercentage = Math.min(100, (numericError / 45) * 100);
                   return (
